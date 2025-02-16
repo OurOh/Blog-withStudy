@@ -12,7 +12,7 @@ public interface BoardService {
 	Board createBoard(Board board);
 	Board updateBoard(Board board);
 	void deleteBoard(Long id);
-
+	/// //////
 }
 
 // MVC Model View Controller
