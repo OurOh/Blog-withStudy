@@ -1,40 +1,23 @@
 package com.musecom.net.service;
 
-import java.util.List;
-
-import org.springframework.stereotype.Service;
 
 import com.musecom.net.dto.Board;
-import com.musecom.net.repository.BoardRepository;
 
-import lombok.RequiredArgsConstructor;
+import java.util.List;
 
-@Service
-@RequiredArgsConstructor
-public class BoardService {
-	
-	private BoardRepository boardRepository;
-	
-	public Board selectBoard(Long id) {
-		return boardRepository.findById(id).orElse(null);
-	}
-	
-	public List<Board> selectAllBoard(){
-		return boardRepository.findAll();
-	}
-	
-	public Board createBoard(Board board) {
-		return boardRepository.save(board);
-	}
-	
-	public Board updateBoard(Board board) {
-		return boardRepository.save(board);
-	}
-	
-	void deleteBoard(Long id) {
-		boardRepository.deleteById(id);
-	}
-	
-	
-	
+public interface BoardService {
+
+	Board selectBoard(Long id);
+	List<Board> selectAllBoard();
+	Board createBoard(Board board);
+	Board updateBoard(Board board);
+	void deleteBoard(Long id);
+
 }
+
+// MVC Model View Controller
+
+// 클라이언트View -> Controller -> Service -> Repository -> DB -> Repository -> Service -> Controller->clientVIew
+
+// Model(dto entity)
+
