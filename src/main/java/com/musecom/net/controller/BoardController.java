@@ -15,13 +15,12 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class BoardController {
 	
-	private BoardService boardService;
+	private final BoardService boardService;
 	
 	@GetMapping("/")
 	public String selectAllBoard(Model model) {
 		List<Board> board = boardService.selectAllBoard();
 		model.addAttribute("board", board);
-		boardService.selectAllBoard();
 		return "board/list";
 	}
 	

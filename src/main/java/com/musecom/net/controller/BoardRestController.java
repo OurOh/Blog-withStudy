@@ -27,9 +27,9 @@ public class BoardRestController {
 
     @GetMapping("/{id}")
 	public ResponseEntity<Board> selectBoard(@PathVariable Long id){
-		Board board = boardService.selectBoard(id);
-		if(board != null) {
-			return ResponseEntity.ok(board);
+		Board result = boardService.selectBoard(id);
+		if(result != null) {
+			return ResponseEntity.ok(result);
 		}else {
 			return ResponseEntity.internalServerError().body(null);
 		}
