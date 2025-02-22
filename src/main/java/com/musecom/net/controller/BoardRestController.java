@@ -19,12 +19,12 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequiredArgsConstructor
-
 @RequestMapping("/board")
 public class BoardRestController {
 
 	private final BoardService boardService;
 
+	//Read
     @GetMapping("/{id}")
 	public ResponseEntity<Board> selectBoard(@PathVariable Long id){
 		Board result = boardService.selectBoard(id);

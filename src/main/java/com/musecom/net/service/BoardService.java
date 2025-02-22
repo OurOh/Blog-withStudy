@@ -7,8 +7,8 @@ import java.util.List;
 
 public interface BoardService {
 
-	Board selectBoard(Long id);
 	List<Board> selectAllBoard();
+	Board selectBoard(Long id);
 	Board createBoard(Board board);
 	Board updateBoard(Board board);
 	void deleteBoard(Long id);

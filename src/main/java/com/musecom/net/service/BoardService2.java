@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+
 public interface BoardService2 {
 
 	List<Board2> selectAllBoard();
