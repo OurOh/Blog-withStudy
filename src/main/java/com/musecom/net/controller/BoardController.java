@@ -21,6 +21,7 @@ public class BoardController {
 	public String selectAllBoard(Model model) {
 		List<Board> board = boardService.selectAllBoard();
 		model.addAttribute("board", board);
+
 		return "board/list";
 	}
 	

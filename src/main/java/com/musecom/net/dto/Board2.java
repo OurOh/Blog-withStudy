@@ -5,12 +5,14 @@ import lombok.*;
 import java.time.LocalDateTime;
 
 
+
 @Getter
 @Setter
-@RequiredArgsConstructor
+@ToString
+@NoArgsConstructor
 @AllArgsConstructor
+//게시판
 public class Board2 {
-
 	private Long id;
 	private String title;
 	private String content;

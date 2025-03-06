@@ -33,7 +33,6 @@ public class BoardRestController {
 		}else {
 			return ResponseEntity.internalServerError().body(null);
 		}
-		
 	}
 	
 	// 게시글 작성

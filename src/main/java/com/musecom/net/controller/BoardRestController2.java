@@ -16,36 +16,32 @@ import java.util.List;
 @RequestMapping("/board")
 public class BoardRestController2 {
     //CRUD
+    private final BoardService boardService;
 
-    private final BoardService2 boardService2;
-
-    //R
     @GetMapping("/{id}")
-    public ResponseEntity<Board2> selectBoard(@PathVariable Long id){
-        Board2 result = boardService2.selectBoard(id);
-        if(result != null) {
+    public ResponseEntity<Board> selectBoard(@PathVariable Long id) {
+        Board result = boardService.selectBoard(id);
+        if (result != null) {
             return ResponseEntity.ok(result);
-        }else {
+        } else {
             return ResponseEntity.internalServerError().body(null);
         }
-
     }
 
-    //C-
     @PostMapping("/write")
-    public ResponseEntity<Integer> createBoard(@RequestBody Board2 board2) {
-        Board2 result = boardService2.createBoard(board2);
-        if(result != null) {
+    public ResponseEntity<Integer> createBoard(@RequestBody Board board) {
+        Board result = boardService.createBoard(board);
+        if (result != null) {
             return ResponseEntity.ok(1);
-        }else {
+        } else {
             return ResponseEntity.internalServerError().body(0);
         }
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Integer> updateBoard(@PathVariable Long id, @RequestBody Board2 board2){
-        board2.setId(id);
-        Board2 result = boardService2.updateBoard(board2);
+    public ResponseEntity<Integer> updateBoard(@PathVariable Long id, @RequestBody Board board) {
+        board.setId(id);
+        Board result = boardService.updateBoard(board);
         if (result != null) {
             return ResponseEntity.ok(1);
         } else {
@@ -55,15 +51,14 @@ public class BoardRestController2 {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Integer> deleteBoard(@PathVariable Long id) {
-        Board2 result = boardService2.selectBoard(id);
+        Board result = boardService.selectBoard(id);
         if (result != null) {
-            boardService2.deleteBoard(id);
+            boardService.deleteBoard(id);
             return ResponseEntity.ok(1);
         } else {
             return ResponseEntity.notFound().build();
         }
     }
-
 
 }
 
