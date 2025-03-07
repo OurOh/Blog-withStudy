@@ -12,7 +12,6 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class Board {
 
 	private Long id;

@@ -34,7 +34,8 @@ public class BoardRestController {
 			return ResponseEntity.internalServerError().body(null);
 		}
 	}
-	
+	//selectBoard(id) 메서드의 반환 타입이 Board
+
 	// 게시글 작성
 	@PostMapping("/write")
 	public ResponseEntity<Integer> createBoard(@RequestBody Board board){
