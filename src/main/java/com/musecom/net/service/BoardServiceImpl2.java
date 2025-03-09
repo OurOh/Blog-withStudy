@@ -10,9 +10,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 
-@RequiredArgsConstructor
 @Service
-public class BoardServiceImpl2 implements BoardService {
+@RequiredArgsConstructor
+public class BoardServiceImpl2 implements BoardService2 {
 
     private final BoardRepository boardRepository;
 
@@ -27,7 +27,7 @@ public class BoardServiceImpl2 implements BoardService {
     }
 
     @Override
-    public Board createBoard(Board board) {
+    public Board writeBoard(Board board) {
         return boardRepository.save(board);
     }
 

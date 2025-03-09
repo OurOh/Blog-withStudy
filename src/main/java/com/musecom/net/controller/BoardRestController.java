@@ -45,7 +45,6 @@ public class BoardRestController {
 		}else {
 			return ResponseEntity.internalServerError().body(0);
 		}
-		
 	}
 	
 	//업데이트
@@ -70,7 +69,6 @@ public class BoardRestController {
 	    } else {
 	        return ResponseEntity.notFound().build();
 	    }
-	    
 	}
 
 	

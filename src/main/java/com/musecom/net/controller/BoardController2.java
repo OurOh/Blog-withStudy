@@ -11,16 +11,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
-@RequiredArgsConstructor
 @Controller
+@RequiredArgsConstructor
 public class BoardController2 {
 
     private final BoardService boardService;
 
     @GetMapping("/")
-    public String selectAllBoard(Model model){
-        List<Board> board = boardService.selectAllBoard();
-        model.addAttribute("board",board);
+    public String selectAllBoard(Model model) {
+        List<Board> result = boardService.selectAllBoard();
+        model.addAttribute("board",result);
         return "board/list";
     }
 }

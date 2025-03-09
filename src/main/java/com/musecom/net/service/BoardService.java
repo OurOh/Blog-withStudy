@@ -8,6 +8,7 @@ import java.util.List;
 public interface BoardService {
 
 	List<Board> selectAllBoard();
+
 	Board selectBoard(Long id);
 	Board createBoard(Board board);
 	Board updateBoard(Board board);
@@ -20,5 +21,5 @@ public interface BoardService {
 
 // 클라이언트View -> Controller -> Service -> Repository -> DB -> Repository -> Service -> Controller->clientVIew
 
-// Model(dto entity)
+// Model(dto, entity)
 

@@ -10,13 +10,12 @@ import java.util.List;
 
 public interface BoardService2 {
 
-	List<Board> selectBoard();
+	List<Board> selectAllBoard();
 	Board selectBoard(Long id);
-	Board createBoard(Board board);
+	Board writeBoard(Board board);
 	Board updateBoard(Board board);
 	void deleteBoard(Long id);
 	//CRUD
-
 }
 
 

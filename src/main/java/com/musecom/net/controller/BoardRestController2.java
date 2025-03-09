@@ -15,27 +15,29 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/board")
 public class BoardRestController2 {
-    //CRUD
-    private final BoardService boardService;
+
+    private BoardService boardService;
+    //RCUD
 
     @GetMapping("/{id}")
-    public ResponseEntity<Board> selectBoard(@PathVariable Long id) {
+    public ResponseEntity<Integer> selectBoard(@PathVariable Long id) {
         Board result = boardService.selectBoard(id);
         if (result != null) {
-            return ResponseEntity.ok(result);
+            return ResponseEntity.ok(1);
         } else {
             return ResponseEntity.internalServerError().body(null);
         }
     }
 
     @PostMapping("/write")
-    public ResponseEntity<Integer> createBoard(@RequestBody Board board) {
+    public ResponseEntity<Board> createBoard(@RequestBody Board board) {
         Board result = boardService.createBoard(board);
         if (result != null) {
-            return ResponseEntity.ok(1);
+            return ResponseEntity.ok(result);
         } else {
-            return ResponseEntity.internalServerError().body(0);
+            return ResponseEntity.internalServerError().body(null);
         }
+
     }
 
     @PutMapping("/{id}")
@@ -45,7 +47,7 @@ public class BoardRestController2 {
         if (result != null) {
             return ResponseEntity.ok(1);
         } else {
-            return ResponseEntity.internalServerError().body(0);
+            return ResponseEntity.internalServerError().body(null);
         }
     }
 
